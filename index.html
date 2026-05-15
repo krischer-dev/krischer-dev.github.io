@@ -1,44 +1,448 @@
-<!doctype html>
-<html lang=en>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset=UTF-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<title>Alexander Krischer</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 512'><path fill='%2301C3CD' d='M537.6 226.6c4.1-10.7 6.4-22.4 6.4-34.6 0-53-43-96-96-96-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32c-88.4 0-160 71.6-160 160 0 2.7.1 5.4.2 8.1C40.2 219.8 0 273.2 0 336c0 79.5 64.5 144 144 144h368c70.7 0 128-57.3 128-128 0-61.9-44-113.6-102.4-125.4z'/></svg>">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=JetBrains+Mono:wght@300;400&display=swap" rel=stylesheet>
-<style>*,::after,::before{box-sizing:border-box;margin:0;padding:0}:root{--bg:#091724;--surface:#0d2035;--accent:#01C3CD;--accent-dim:#017f87;--text:#FBFFFF;--muted:#5a8fa0;--border:rgba(1,195,205,0.2);--border-soft:rgba(251,255,255,0.07)}body,html{height:100%;width:100%;overflow:hidden}body{background:var(--bg);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;color:var(--text);position:relative}.sky{position:fixed;inset:0;background:radial-gradient(ellipse 70% 50% at 15% 70%,rgba(1,50,70,.55) 0,transparent 60%),radial-gradient(ellipse 60% 40% at 85% 20%,rgba(1,40,60,.45) 0,transparent 55%),var(--bg);z-index:0}.glow-blob{position:fixed;width:540px;height:540px;border-radius:50%;background:radial-gradient(circle,rgba(1,195,205,.07) 0,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);z-index:0;animation:breathe 7s ease-in-out infinite}@keyframes breathe{0%,100%{opacity:.6;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.15)}}.grid{position:fixed;inset:0;z-index:0;background-image:linear-gradient(rgba(1,195,205,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(1,195,205,.05) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 65% 65% at 50% 50%,black 20%,transparent 80%)}.stars{position:fixed;inset:0;z-index:0}.star{position:absolute;width:1px;height:1px;background:#d6f9fb;border-radius:50%;animation:twinkle var(--d,3s) ease-in-out infinite var(--delay,0s)}@keyframes twinkle{0%,100%{opacity:var(--min-op, .05)}50%{opacity:var(--max-op, .5)}}.card{position:relative;z-index:10;width:min(460px,90vw);padding:52px 48px 48px;background:rgba(9,23,36,.82);border:1px solid var(--border);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);box-shadow:0 0 0 1px rgba(251,255,255,.03),0 40px 80px rgba(0,0,0,.6),0 0 60px rgba(1,195,205,.08),inset 0 1px 0 rgba(251,255,255,.05);animation:fadeUp 1s cubic-bezier(.16,1,.3,1) forwards;opacity:0}@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}.card::after,.card::before{content:'';position:absolute;width:14px;height:14px;border-color:var(--accent);border-style:solid}.card::before{top:-1px;left:-1px;border-width:2px 0 0 2px}.card::after{bottom:-1px;right:-1px;border-width:0 2px 2px 0}.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(1,195,205,.08);border:1px solid rgba(1,195,205,.25);border-radius:4px;padding:4px 10px;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:32px;opacity:0;animation:fadeIn .7s ease forwards .35s}.badge-dot{width:5px;height:5px;border-radius:50%;background:var(--accent);box-shadow:0 0 6px var(--accent);animation:pulse 2.5s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}.name{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(38px, 9vw, 52px);line-height:1;letter-spacing:-.01em;color:var(--text);margin-bottom:8px;opacity:0;animation:fadeIn .7s ease forwards .55s}.name span{color:var(--accent)}.title{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:40px;opacity:0;animation:fadeIn .7s ease forwards .7s}.divider{width:100%;height:1px;background:linear-gradient(90deg,var(--accent-dim),transparent 70%);margin-bottom:32px;opacity:0;transform-origin:left;animation:expandLine .8s cubic-bezier(.16,1,.3,1) forwards .9s}@keyframes expandLine{from{opacity:0;transform:scaleX(0)}to{opacity:1;transform:scaleX(1)}}.contact{display:flex;flex-direction:column;gap:12px;opacity:0;animation:fadeIn .7s ease forwards 1s}.contact-item{display:flex;align-items:center;gap:14px;font-size:12px;color:var(--muted);text-decoration:none;transition:color .2s}.contact-item:hover{color:var(--text)}.contact-item:hover .icon-wrap{border-color:var(--accent);background:rgba(1,195,205,.1);box-shadow:0 0 10px rgba(1,195,205,.18)}.icon-wrap{width:34px;height:34px;border:1px solid var(--border-soft);border-radius:6px;background:rgba(251,255,255,.03);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}.icon-wrap svg{width:14px;height:14px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.cloud-mark{position:absolute;top:-22px;right:40px;opacity:0;animation:fadeIn 1s ease forwards 1.3s}.cloud-mark svg{width:44px;height:44px;filter:drop-shadow(0 0 12px rgba(1,195,205,.6))}@keyframes fadeIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}.footer-label{position:fixed;bottom:26px;left:50%;transform:translateX(-50%);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(1,195,205,.22);z-index:5;white-space:nowrap}</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alexander Krischer</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #080c10;
+      --bg-card:      #0e1318;
+      --bg-card-hi:   #121820;
+      --border:       #1e2730;
+      --border-hi:    #263040;
+      --fg:           #dce8f0;
+      --fg-muted:     #64748b;
+      --fg-subtle:    #334155;
+      --blue:         #4a9eff;
+      --blue-dim:     #1d3a5e;
+      --blue-muted:   #0f1e30;
+      --green:        #34d058;
+      --green-bg:     #0a1f12;
+      --purple:       #b57aff;
+      --purple-bg:    #170f2a;
+      --orange:       #f0a050;
+      --orange-bg:    #211408;
+      --teal:         #2dd4bf;
+      --teal-bg:      #081918;
+      --red:          #ff6b6b;
+      --red-bg:       #200a0a;
+    }
+
+    html, body { min-height: 100%; }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100dvh;
+      padding: 48px 16px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* ── Background layers ── */
+
+    /* Fine dot grid */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(74,158,255,0.12) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Central radial glow behind card */
+    .bg-glow {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      translate: -50% -52%;
+      width: 900px;
+      height: 700px;
+      background: radial-gradient(ellipse at center,
+        rgba(74, 158, 255, 0.055) 0%,
+        rgba(45, 212, 191, 0.025) 35%,
+        transparent 70%
+      );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Bottom edge fade */
+    .bg-fade {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 200px;
+      background: linear-gradient(to top, rgba(8,12,16,0.9), transparent);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Card layout ── */
+    .card {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 460px;
+      zoom: 1.25;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* ── Header ── */
+    .header {
+      padding: 4px 2px 16px;
+      opacity: 0;
+      animation: fadeUp 0.5s cubic-bezier(0.22,1,0.36,1) 0.05s forwards;
+    }
+
+    .profile-row {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 16px;
+    }
+
+    .avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #1a2d4a 0%, #0c1824 100%);
+      border: 1.5px solid var(--border-hi);
+      box-shadow: 0 0 0 3px rgba(74,158,255,0.07), inset 0 1px 0 rgba(255,255,255,0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 19px;
+      font-weight: 600;
+      color: var(--blue);
+      letter-spacing: -0.5px;
+      font-family: 'SF Mono', 'Fira Code', ui-monospace, monospace;
+    }
+
+    .profile-name {
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--fg);
+      line-height: 1.2;
+      letter-spacing: -0.3px;
+    }
+
+    .profile-handle {
+      font-size: 12.5px;
+      color: var(--fg-muted);
+      margin-top: 3px;
+      font-family: 'SF Mono', 'Fira Code', ui-monospace, monospace;
+      letter-spacing: 0.01em;
+    }
+
+    .badges {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 11.5px;
+      font-weight: 600;
+      border: 1px solid;
+      letter-spacing: 0.01em;
+    }
+
+    .badge-green {
+      background: var(--green-bg);
+      color: var(--green);
+      border-color: rgba(52,208,88,0.2);
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.4; }
+    }
+
+    .role-tag {
+      font-size: 13px;
+      color: var(--fg-muted);
+      font-weight: 400;
+    }
+
+    /* ── Section card ── */
+    .section {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      opacity: 0;
+      animation: fadeUp 0.5s cubic-bezier(0.22,1,0.36,1) var(--delay, 0.1s) forwards;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.025);
+    }
+
+    .section-label {
+      font-size: 10.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--fg-subtle);
+      padding: 9px 14px 7px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,0.015);
+    }
+
+    /* ── Detail rows ── */
+    .detail-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 11px 14px;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s ease;
+    }
+
+    .detail-row:last-child { border-bottom: none; }
+    .detail-row:hover { background: rgba(255,255,255,0.02); }
+
+    .detail-key {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 13.5px;
+      color: var(--fg-muted);
+    }
+
+    .detail-icon {
+      width: 15px;
+      height: 15px;
+      stroke: var(--fg-subtle);
+      fill: none;
+      stroke-width: 1.75;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    .detail-value { font-size: 13.5px; color: var(--fg); }
+
+    .detail-value.link {
+      color: var(--blue);
+      text-decoration: none;
+      font-family: 'SF Mono', 'Fira Code', ui-monospace, monospace;
+      font-size: 12.5px;
+      transition: color 0.15s ease;
+    }
+
+    .detail-value.link:hover { color: #8ec5ff; }
+
+    /* ── Stack rows ── */
+    .stack-row {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s ease;
+    }
+
+    .stack-row:last-child { border-bottom: none; }
+    .stack-row:hover { background: rgba(255,255,255,0.02); }
+
+    .stack-icon-wrap {
+      width: 30px;
+      height: 30px;
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .ic-green  { background: var(--green-bg); }
+    .ic-blue   { background: var(--blue-muted); }
+    .ic-purple { background: var(--purple-bg); }
+    .ic-orange { background: var(--orange-bg); }
+    .ic-teal   { background: var(--teal-bg); }
+    .ic-red    { background: var(--red-bg); }
+
+    .stack-icon {
+      width: 14px;
+      height: 14px;
+      fill: none;
+      stroke-width: 1.9;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .sk-green  { stroke: var(--green); }
+    .sk-blue   { stroke: var(--blue); }
+    .sk-purple { stroke: var(--purple); }
+    .sk-orange { stroke: var(--orange); }
+    .sk-teal   { stroke: var(--teal); }
+    .sk-red    { stroke: var(--red); }
+
+    .stack-text { flex: 1; min-width: 0; }
+
+    .stack-label {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--fg);
+      line-height: 1.3;
+    }
+
+    .stack-sub {
+      font-size: 11px;
+      color: var(--fg-muted);
+      margin-top: 2px;
+      font-family: 'SF Mono', 'Fira Code', ui-monospace, monospace;
+      line-height: 1.5;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* ── Animations ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
-<div class=sky></div>
-<div class=glow-blob></div>
-<div class=grid></div>
-<div class=stars id=stars></div>
-<article class=card>
-<div class=cloud-mark>
-<svg viewBox="0 0 44 44" fill=none xmlns=http://www.w3.org/2000/svg>
-<path d="M32 27H13a9 9 0 1 1 1.8-17.82A10.5 10.5 0 1 1 32 20" stroke=#01C3CD stroke-width=1.4 stroke-linecap=round stroke-linejoin=round />
-<rect x=16 y=30 width=12 height=3.2 rx=1.2 stroke=#01C3CD stroke-width=1.2 />
-<rect x=16 y=35.5 width=12 height=3.2 rx=1.2 stroke=#01C3CD stroke-width=1.2 />
-<circle cx=25.5 cy=31.6 r=0.9 fill=#01C3CD />
-<circle cx=25.5 cy=37.1 r=0.9 fill=#01C3CD />
-</svg>
-</div>
-<h1 class=name>Alexander<br><span>Krischer</span></h1>
-<p class=title>Cloud Engineer</p>
-<div class=divider></div>
-<div class=contact>
-<a class=contact-item href=mailto:alexander@krischer.dev>
-<div class=icon-wrap>
-<svg viewBox="0 0 24 24">
-<rect x=2 y=4 width=20 height=16 rx=2 />
-<path d="M2 7l10 7 10-7"/>
-</svg>
-</div>
-alexander@krischer.dev
-</a>
-</div>
-</article>
-<script>const container=document.getElementById("stars");for(let n=0;n<100;n++){const n=document.createElement("div");n.className="star",n.style.cssText=`\n        top:${100*Math.random()}%;\n        left:${100*Math.random()}%;\n        --d:${2+4*Math.random()}s;\n        --delay:${5*-Math.random()}s;\n        --min-op:${.05+.08*Math.random()};\n        --max-op:${.3+.45*Math.random()};\n        width:${Math.random()>.8?2:1}px;\n        height:${Math.random()>.8?2:1}px;\n      `,container.appendChild(n)}</script>
+
+  <div class="bg-glow"></div>
+  <div class="bg-fade"></div>
+
+  <div class="card">
+
+    <!-- Header -->
+    <div class="header">
+      <div class="profile-row">
+        <div class="avatar">AK</div>
+        <div>
+          <div class="profile-name">Alexander Krischer</div>
+          <div class="profile-handle">@krischer.dev</div>
+        </div>
+      </div>
+      <div class="badges">
+        <span class="badge badge-green"><span class="badge-dot"></span>Available</span>
+        <span class="role-tag">Cloud Engineer</span>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="section" style="--delay: 0.14s">
+      <div class="section-label">Contact</div>
+      <div class="detail-row">
+        <div class="detail-key">
+          <svg class="detail-icon" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+          Email
+        </div>
+        <a class="detail-value link" href="mailto:alexander@krischer.dev">alexander@krischer.dev</a>
+      </div>
+      <div class="detail-row">
+        <div class="detail-key">
+          <svg class="detail-icon" viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 14 8 14s8-8.75 8-14a8 8 0 0 0-8-8z"/></svg>
+          Location
+        </div>
+        <span class="detail-value">Cologne</span>
+      </div>
+    </div>
+
+    <!-- Stack -->
+    <div class="section" style="--delay: 0.22s">
+      <div class="section-label">Stack</div>
+
+      <div class="stack-row">
+        <div class="stack-icon-wrap ic-blue">
+          <svg class="stack-icon sk-blue" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <div class="stack-text">
+          <div class="stack-label">Languages</div>
+          <div class="stack-sub">Go · Java · Python</div>
+        </div>
+      </div>
+
+      <div class="stack-row">
+        <div class="stack-icon-wrap ic-green">
+          <svg class="stack-icon sk-green" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="10" ry="4"/><path d="M2 12c0 2.21 4.48 4 10 4s10-1.79 10-4"/><path d="M2 12v6c0 2.21 4.48 4 10 4s10-1.79 10-4v-6"/></svg>
+        </div>
+        <div class="stack-text">
+          <div class="stack-label">Kubernetes & Containers</div>
+          <div class="stack-sub">k8s · Helm · Docker · Kubebuilder · ArgoCD</div>
+        </div>
+      </div>
+
+      <div class="stack-row">
+        <div class="stack-icon-wrap ic-purple">
+          <svg class="stack-icon sk-purple" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </div>
+        <div class="stack-text">
+          <div class="stack-label">Backend & APIs</div>
+          <div class="stack-sub">HTTP · REST · SQL · JWT · OAuth2 · OpenAPI</div>
+        </div>
+      </div>
+
+      <div class="stack-row">
+        <div class="stack-icon-wrap ic-orange">
+          <svg class="stack-icon sk-orange" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="stack-text">
+          <div class="stack-label">Observability</div>
+          <div class="stack-sub">OpenTelemetry · Grafana · Prometheus · Loki</div>
+        </div>
+      </div>
+
+      <div class="stack-row">
+        <div class="stack-icon-wrap ic-red">
+          <svg class="stack-icon sk-red" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="stack-text">
+          <div class="stack-label">Security</div>
+          <div class="stack-sub">Encryption · Signing · TLS · mTLS</div>
+        </div>
+      </div>
+
+      <div class="stack-row">
+        <div class="stack-icon-wrap ic-teal">
+          <svg class="stack-icon sk-teal" viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+        </div>
+        <div class="stack-text">
+          <div class="stack-label">Tooling & Scripting</div>
+          <div class="stack-sub">Bash · Git · Linux · CI/CD · Make · Terraform</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
 </body>
 </html>
-
